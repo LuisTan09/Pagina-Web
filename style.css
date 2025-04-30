@@ -1,45 +1,72 @@
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
-  background: url('../img/textura_red_neuronal.png') repeat, #0a0a0a;
-  background-size: cover;
+  background: linear-gradient(#0a0a0a, #111111);
   color: #e0e0e0;
+  background-attachment: fixed;
+  overflow-x: hidden;
 }
 
 .header, .footer {
   background-color: #1a1a1a;
   padding: 1em;
   text-align: center;
+  box-shadow: 0 0 15px #00c3ff80;
 }
 
 .nav a {
-  margin: 0 15px;
+  margin: 0 20px;
   color: #00c3ff;
   text-decoration: none;
+  font-weight: bold;
+  position: relative;
 }
 
-.nav a:hover {
-  text-shadow: 0 0 8px #00c3ff;
+.nav a::after {
+  content: '';
+  display: block;
+  height: 2px;
+  width: 0;
+  background: #00c3ff;
+  transition: width 0.3s;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+}
+
+.nav a:hover::after {
+  width: 100%;
 }
 
 .main-content {
   padding: 2em;
   text-align: center;
+  animation: fadeIn 1.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px);}
+  to { opacity: 1; transform: translateY(0);}
 }
 
 input, button {
-  padding: 10px;
+  padding: 10px 20px;
   margin: 5px;
-  border-radius: 5px;
-  border: none;
+  border-radius: 8px;
+  border: 1px solid #00c3ff;
+  background: #1a1a1a;
+  color: #00c3ff;
+  font-weight: bold;
 }
 
 button {
-  background-color: #00c3ff;
-  color: #0a0a0a;
-  cursor: pointer;
+  background: linear-gradient(90deg, #00c3ff, #0077aa);
+  border: none;
+  box-shadow: 0 0 10px #00c3ff80;
+  transition: background 0.5s, transform 0.2s;
 }
 
 button:hover {
-  background-color: #009ac1;
+  background: linear-gradient(90deg, #0077aa, #00c3ff);
+  transform: scale(1.05);
 }
