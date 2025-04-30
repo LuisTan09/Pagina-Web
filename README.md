@@ -2,13 +2,15 @@
 
 Este proyecto integra:
 
-- 🌐 Un sitio web de navegación fácil y futurista.
+- 🌐 Un sitio web futurista monocromático.
 - 🤖 Un agente virtual (Botpress).
-- 📚 Un módulo de guías de inducción.
-- ✅ Un gestor de tareas para control de actividades.
+- 📚 Un portal de guías de inducción.
+- ✅ Un gestor de tareas.
 
-Colores: Monocromáticos, basados en el estilo institucional UAM.
+**Diseño basado en la identidad de la Universidad Autónoma de Manizales (UAM).**
 
 ---
 
-**Proyecto desarrollado en 2025 por Admisiones y Registro Académico UAM.**
+## Publicación en GitHub Pages
+Este `index.html` está listo para ser publicado en GitHub Pages. 
+Sólo debes ir a tu repositorio > Settings > Pages y seleccionar la rama principal (/root).
