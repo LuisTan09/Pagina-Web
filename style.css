@@ -1,72 +1,72 @@
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
-  background: linear-gradient(#0a0a0a, #111111);
+  background: #0a0a0a url('../img/textura_red_neuronal.png') repeat center center;
+  background-size: cover;
   color: #e0e0e0;
-  background-attachment: fixed;
-  overflow-x: hidden;
+  min-height: 100vh;
 }
 
 .header, .footer {
-  background-color: #1a1a1a;
-  padding: 1em;
+  background-color: #111;
+  padding: 1.5em 1em;
   text-align: center;
-  box-shadow: 0 0 15px #00c3ff80;
+  border-bottom: 1px solid #00c3ff50;
+  box-shadow: 0 0 10px #00c3ff30;
+}
+
+.footer {
+  border-top: 1px solid #00c3ff50;
+  border-bottom: none;
+}
+
+.nav {
+  margin-top: 1em;
 }
 
 .nav a {
-  margin: 0 20px;
+  margin: 0 15px;
   color: #00c3ff;
   text-decoration: none;
   font-weight: bold;
-  position: relative;
+  transition: all 0.3s ease;
 }
 
-.nav a::after {
-  content: '';
-  display: block;
-  height: 2px;
-  width: 0;
-  background: #00c3ff;
-  transition: width 0.3s;
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-}
-
-.nav a:hover::after {
-  width: 100%;
+.nav a:hover {
+  text-shadow: 0 0 12px #00c3ff, 0 0 20px #00c3ff;
 }
 
 .main-content {
-  padding: 2em;
+  padding: 3em 2em;
   text-align: center;
-  animation: fadeIn 1.5s ease-in;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px);}
-  to { opacity: 1; transform: translateY(0);}
+.bienvenida h2 {
+  margin-bottom: 0.5em;
+  font-size: 2em;
+  color: #00c3ff;
+}
+
+.bienvenida p {
+  font-size: 1.2em;
+  color: #ccc;
 }
 
 input, button {
   padding: 10px 20px;
-  margin: 5px;
-  border-radius: 8px;
-  border: 1px solid #00c3ff;
-  background: #1a1a1a;
-  color: #00c3ff;
-  font-weight: bold;
+  margin: 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 1em;
 }
 
 button {
-  background: linear-gradient(90deg, #00c3ff, #0077aa);
-  border: none;
-  box-shadow: 0 0 10px #00c3ff80;
-  transition: background 0.5s, transform 0.2s;
+  background-color: #00c3ff;
+  color: #0a0a0a;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
-  background: linear-gradient(90deg, #0077aa, #00c3ff);
-  transform: scale(1.05);
+  background-color: #009ac1;
 }
