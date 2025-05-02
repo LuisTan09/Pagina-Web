@@ -155,5 +155,13 @@ particlesJS('particles-js', {
     </div>
   </section>
 </main>
+  <script>
+function cargarGuia(ruta) {
+  var visor = document.getElementById('visor-guia');
+  var iframe = document.getElementById('iframe-guia');
+  iframe.src = ruta;
+  visor.style.display = 'block';
+}
+</script>
 </body>
 </html>
