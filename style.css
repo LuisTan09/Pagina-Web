@@ -277,4 +277,84 @@ button:hover {
   background: linear-gradient(135deg, #ff00c8, #8a2be2);
   transform: scale(1.1) rotate(calc(120deg * var(--i))) translate(80px) rotate(calc(-120deg * var(--i)));
 }
+/* Botón flotante */
+.boton-guias {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  background: linear-gradient(135deg, #00c3ff, #8a2be2);
+  color: white;
+  font-size: 30px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 70px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  transition: transform 0.4s ease;
+  z-index: 1000;
+}
+
+.boton-guias:hover {
+  transform: rotate(20deg) scale(1.1);
+}
+
+/* Menú circular */
+.menu-circular {
+  position: fixed;
+  right: 65px;
+  bottom: 65px;
+  width: 200px;
+  height: 200px;
+  pointer-events: none;
+  transition: all 0.4s ease;
+  z-index: 999;
+}
+
+.menu-circular.activo {
+  pointer-events: all;
+}
+
+.menu-circular .opcion {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #39ff14, #00c3ff);
+  color: white;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 60px;
+  font-size: 12px;
+  transform: rotate(calc(72deg * var(--i))) translate(90px) rotate(calc(-72deg * var(--i)));
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  transition-delay: calc(0.05s * var(--i));
+  cursor: pointer;
+  filter: drop-shadow(0 0 5px #00f0ff);
+}
+
+/* Cuando activo: flotan */
+.menu-circular.activo .opcion {
+  opacity: 1;
+  animation: burbuja 0.6s ease forwards;
+}
+
+/* Animación burbuja */
+@keyframes burbuja {
+  0% {
+    transform: scale(0.5) rotate(calc(72deg * var(--i))) translate(30px) rotate(calc(-72deg * var(--i)));
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) rotate(calc(72deg * var(--i))) translate(90px) rotate(calc(-72deg * var(--i)));
+    opacity: 1;
+  }
+}
+
+/* Hover efecto especial */
+.menu-circular .opcion:hover {
+  background: linear-gradient(135deg, #ff00c8, #8a2be2);
+  transform: scale(1.2) rotate(calc(72deg * var(--i))) translate(90px) rotate(calc(-72deg * var(--i)));
+}
 
