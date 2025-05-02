@@ -135,5 +135,25 @@ particlesJS('particles-js', {
   "retina_detect": true
 });
 </script>
+  <main class="main-content">
+  <section class="bienvenida">
+    <h2>Bienvenido al Portal</h2>
+    <p>Tu centro de ayuda, tareas y asistencia virtual en Admisiones y Registro.</p>
+  </section>
+
+  <section class="guias">
+    <h2>Guías de ayuda 📚</h2>
+    <ul class="lista-guias">
+      <li><a href="#" onclick="cargarGuia('guias/homologacion.pdf')">Guía de Homologación</a></li>
+      <li><a href="#" onclick="cargarGuia('guias/validacion.pdf')">Guía de Validación</a></li>
+      <li><a href="#" onclick="cargarGuia('guias/instructivo_registro.pdf')">Instructivo de Registro</a></li>
+    </ul>
+
+    <!-- Aquí aparecerán las guías -->
+    <div class="visor-guia" id="visor-guia">
+      <iframe id="iframe-guia" src="" frameborder="0"></iframe>
+    </div>
+  </section>
+</main>
 </body>
 </html>
