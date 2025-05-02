@@ -185,6 +185,24 @@
     menu.classList.toggle('active');
   }
 </script>
+<!-- Botón de Guías flotante -->
+<div class="boton-guias" id="botonGuias" onclick="toggleMenu()">
+  📚
+</div>
 
+<!-- Menú radial oculto -->
+<div class="menu-radial" id="menuRadial">
+  <div class="opcion" style="--i:0;" onclick="abrirModal('guias/homologacion.pdf')">Homologación</div>
+  <div class="opcion" style="--i:1;" onclick="abrirModal('guias/validacion.pdf')">Validación</div>
+  <div class="opcion" style="--i:2;" onclick="abrirModal('guias/instructivo_registro.pdf')">Registro</div>
+</div>
+
+<!-- Script para abrir/cerrar -->
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById('menuRadial');
+    menu.classList.toggle('activo');
+  }
+</script>
 </body>
 </html>
