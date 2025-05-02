@@ -163,6 +163,29 @@ function cargarGuia(ruta) {
   iframe.src = ruta;
   visor.style.display = 'block';
 }
+    <script>
+function abrirModal(rutaGuia) {
+  var modal = document.getElementById('modal-guia');
+  var iframe = document.getElementById('iframe-modal');
+  iframe.src = rutaGuia;
+  modal.style.display = 'block';
+}
+
+function cerrarModal() {
+  var modal = document.getElementById('modal-guia');
+  var iframe = document.getElementById('iframe-modal');
+  modal.style.display = 'none';
+  iframe.src = ''; // Limpia para no dejarlo cargando
+}
+
+// Cerrar modal si hace clic afuera del contenido
+window.onclick = function(event) {
+  var modal = document.getElementById('modal-guia');
+  if (event.target == modal) {
+    cerrarModal();
+  }
+}
+</script>
 </script>
 </body>
 </html>
