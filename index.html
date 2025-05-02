@@ -36,71 +36,104 @@
 
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 <script>
-  particlesJS('particles-js', {
-    "particles": {
-      "number": {
-        "value": 80,
-        "density": {
-          "enable": true,
-          "value_area": 800
-        }
-      },
-      "color": {
-        "value": "#00c3ff"
-      },
-      "shape": {
-        "type": "circle",
-        "stroke": {
-          "width": 0,
-          "color": "#00c3ff"
-        }
-      },
-      "opacity": {
-        "value": 0.5,
-        "random": true
-      },
-      "size": {
-        "value": 3,
-        "random": true
-      },
-      "line_linked": {
+particlesJS('particles-js', {
+  "particles": {
+    "number": {
+      "value": 100,
+      "density": {
         "enable": true,
-        "distance": 120,
-        "color": "#00c3ff",
-        "opacity": 0.4,
-        "width": 1
-      },
-      "move": {
+        "value_area": 1000
+      }
+    },
+    "color": {
+      "value": ["#00c3ff", "#8a2be2", "#39ff14", "#ff00c8"]  // colores dinámicos
+    },
+    "shape": {
+      "type": "circle",
+      "stroke": {
+        "width": 0,
+        "color": "#000"
+      }
+    },
+    "opacity": {
+      "value": 0.6,
+      "random": true,
+      "anim": {
+        "enable": true,
+        "speed": 0.5,
+        "opacity_min": 0.2,
+        "sync": false
+      }
+    },
+    "size": {
+      "value": 3,
+      "random": true,
+      "anim": {
         "enable": true,
         "speed": 2,
-        "direction": "none",
-        "random": true,
-        "straight": false,
-        "out_mode": "out"
+        "size_min": 0.5,
+        "sync": false
       }
     },
-    "interactivity": {
-      "detect_on": "canvas",
-      "events": {
-        "onhover": {
-          "enable": true,
-          "mode": "grab"
-        },
-        "onclick": {
-          "enable": false
+    "line_linked": {
+      "enable": true,
+      "distance": 120,
+      "color": "#ffffff",
+      "opacity": 0.3,
+      "width": 1
+    },
+    "move": {
+      "enable": true,
+      "speed": 1.5,
+      "direction": "none",
+      "random": false,
+      "straight": false,
+      "out_mode": "out",
+      "attract": {
+        "enable": false
+      }
+    }
+  },
+  "interactivity": {
+    "detect_on": "canvas",
+    "events": {
+      "onhover": {
+        "enable": true,
+        "mode": "grab"
+      },
+      "onclick": {
+        "enable": true,
+        "mode": "push"  // efecto destello al hacer clic
+      },
+      "resize": true
+    },
+    "modes": {
+      "grab": {
+        "distance": 200,
+        "line_linked": {
+          "opacity": 0.7
         }
       },
-      "modes": {
-        "grab": {
-          "distance": 140,
-          "line_linked": {
-            "opacity": 1
-          }
-        }
+      "bubble": {
+        "distance": 250,
+        "size": 6,
+        "duration": 2,
+        "opacity": 0.8,
+        "speed": 3
+      },
+      "repulse": {
+        "distance": 400
+      },
+      "push": {
+        "particles_nb": 4   // al hacer clic agrega 4 partículas "brillando"
+      },
+      "remove": {
+        "particles_nb": 2
       }
-    },
-    "retina_detect": true
-  });
+    }
+  },
+  "retina_detect": true
+});
 </script>
 </body>
 </html>
