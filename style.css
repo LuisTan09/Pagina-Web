@@ -85,3 +85,17 @@ button:hover {
     margin: 10px 0;
   }
 }
+.visor-guia {
+  width: 100%;
+  max-width: 1000px;
+  margin: 20px auto;
+  display: none; /* Oculto al principio */
+}
+
+#iframe-guia {
+  width: 100%;
+  height: 600px;
+  border: 2px solid #00c3ff;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #00c3ff50;
+}
