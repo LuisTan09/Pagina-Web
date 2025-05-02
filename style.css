@@ -218,57 +218,47 @@ button:hover {
   transform: translateX(10px);
 }
 
-/* Menú circular */
-.menu-circular {
+.menu-circular-visual {
   position: fixed;
-  right: 65px;
-  bottom: 65px;
-  width: 200px;
-  height: 200px;
-  pointer-events: none;
-  transition: all 0.4s ease;
-  z-index: 999;
+  bottom: 90px;
+  right: 30px;
+  width: 250px;
+  height: 250px;
+  z-index: 1000;
+  display: none;
 }
 
-.menu-circular.activo {
-  pointer-events: all;
+.menu-circular-visual.activo {
+  display: block;
 }
 
-.menu-circular .opcion {
+.menu-circular-visual .circle {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.circle-btn {
   position: absolute;
   width: 60px;
   height: 60px;
-  background: linear-gradient(135deg, #39ff14, #00c3ff);
-  color: white;
   border-radius: 50%;
+  border: none;
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transform: rotate(calc(var(--i) * 72deg)) translate(90px) rotate(calc(var(--i) * -72deg));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
   text-align: center;
-  line-height: 60px;
-  font-size: 12px;
-  transform: rotate(calc(72deg * var(--i))) translate(90px) rotate(calc(-72deg * var(--i)));
-  opacity: 0;
-  transition: transform 0.5s ease, opacity 0.5s ease;
-  transition-delay: calc(0.05s * var(--i));
   cursor: pointer;
-  filter: drop-shadow(0 0 5px #00f0ff);
+  transition: transform 0.3s ease;
 }
 
-.menu-circular.activo .opcion {
-  opacity: 1;
-  animation: burbuja 0.6s ease forwards;
-}
-
-@keyframes burbuja {
-  0% {
-    transform: scale(0.5) rotate(calc(72deg * var(--i))) translate(30px) rotate(calc(-72deg * var(--i)));
-    opacity: 0;
-  }
-  100% {
-    transform: scale(1) rotate(calc(72deg * var(--i))) translate(90px) rotate(calc(-72deg * var(--i)));
-    opacity: 1;
-  }
-}
-
-.menu-circular .opcion:hover {
-  background: linear-gradient(135deg, #ff00c8, #8a2be2);
-  transform: scale(1.2) rotate(calc(72deg * var(--i))) translate(90px) rotate(calc(-72deg * var(--i)));
+.circle-btn img {
+  width: 24px;
+  height: 24px;
+  margin-bottom: 2px;
 }
