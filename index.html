@@ -152,35 +152,48 @@
     </div>
   </div>
 
-  <script>
-    function abrirModal(rutaGuia) {
-      var modal = document.getElementById('modal-guia');
-      var iframe = document.getElementById('iframe-modal');
-      iframe.src = rutaGuia;
-      modal.style.display = 'block';
-    }
+  <!-- Tu script actual del modal -->
+<script>
+  function abrirModal(rutaGuia) {
+    var modal = document.getElementById('modal-guia');
+    var iframe = document.getElementById('iframe-modal');
+    iframe.src = rutaGuia;
+    modal.style.display = 'block';
+  }
 
-    function cerrarModal() {
-      var modal = document.getElementById('modal-guia');
-      var iframe = document.getElementById('iframe-modal');
-      modal.style.display = 'none';
-      iframe.src = ''; // Limpia para no dejarlo cargando
-    }
+  function cerrarModal() {
+    var modal = document.getElementById('modal-guia');
+    var iframe = document.getElementById('iframe-modal');
+    modal.style.display = 'none';
+    iframe.src = '';
+  }
 
-    // Cerrar modal si hace clic afuera del contenido
-    window.onclick = function(event) {
-      var modal = document.getElementById('modal-guia');
-      if (event.target == modal) {
-        cerrarModal();
-      }
+  window.onclick = function(event) {
+    var modal = document.getElementById('modal-guia');
+    if (event.target == modal) {
+      cerrarModal();
     }
-  </script>
-  <script>
+  }
+</script>
+
+<!-- Aquí pegas el nuevo botón y menú tipo rueda -->
+<div class="boton-guias" id="botonGuias" onclick="toggleMenu()">
+  📚 Guías
+</div>
+
+<div class="menu-rueda" id="menuRueda">
+  <div class="opcion" onclick="abrirModal('guias/homologacion.pdf')">Homologación</div>
+  <div class="opcion" onclick="abrirModal('guias/validacion.pdf')">Validación</div>
+  <div class="opcion" onclick="abrirModal('guias/instructivo_registro.pdf')">Instructivo Registro</div>
+</div>
+
+<!-- Script para controlar abrir/cerrar la rueda -->
+<script>
   function toggleMenu() {
     var menu = document.getElementById('menuRueda');
     menu.classList.toggle('active');
   }
 </script>
+
 </body>
 </html>
-
