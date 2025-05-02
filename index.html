@@ -4,16 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portal Admisiones y Registro UAM</title>
-  
-  <!-- Agrega esta línea para que funcione Roboto -->
+
+  <!-- Fuente Roboto -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
-  <!-- Y asegúrate que el CSS esté bien vinculado -->
+  <!-- Estilos externos -->
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+  <!-- Fondo de partículas -->
   <div id="particles-js"></div>
+
+  <!-- Encabezado -->
   <header class="header">
     <h1>Admisiones y Registro UAM</h1>
     <nav class="nav">
@@ -23,6 +26,7 @@
     </nav>
   </header>
 
+  <!-- Contenido principal -->
   <main class="main-content">
     <section class="bienvenida">
       <h2>Bienvenido al Portal</h2>
@@ -30,11 +34,37 @@
     </section>
   </main>
 
+  <!-- Pie de página -->
   <footer class="footer">
     <p>© Universidad Autónoma de Manizales - Admisiones y Registro 2025</p>
   </footer>
 
+  <!-- Modal oculto para mostrar guías -->
+  <div id="modal-guia" class="modal">
+    <div class="modal-content">
+      <span class="cerrar" onclick="cerrarModal()">&times;</span>
+      <iframe id="iframe-modal" src="" frameborder="0"></iframe>
+    </div>
+  </div>
+
+  <!-- Botón flotante para abrir menú circular -->
+  <div class="boton-guias" id="botonGuias" onclick="toggleMenu()">
+    📚 Guías
+  </div>
+
+  <!-- Menú circular -->
+  <div class="menu-circular" id="menuCircular">
+    <div class="opcion" style="--i:0;" onclick="abrirModal('guias/homologacion.pdf')">Homologación</div>
+    <div class="opcion" style="--i:1;" onclick="abrirModal('guias/validacion.pdf')">Validación</div>
+    <div class="opcion" style="--i:2;" onclick="abrirModal('guias/registro.pdf')">Registro</div>
+    <div class="opcion" style="--i:3;" onclick="abrirModal('guias/admision.pdf')">Admisión</div>
+    <div class="opcion" style="--i:4;" onclick="abrirModal('guias/documentos.pdf')">Documentos</div>
+  </div>
+
+  <!-- Librería de partículas -->
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+  <!-- Configuración de partículas -->
   <script>
     particlesJS('particles-js', {
       "particles": {
@@ -49,11 +79,7 @@
           "value": ["#00c3ff", "#8a2be2", "#39ff14", "#ff00c8"]
         },
         "shape": {
-          "type": "circle",
-          "stroke": {
-            "width": 0,
-            "color": "#000"
-          }
+          "type": "circle"
         },
         "opacity": {
           "value": 0.6,
@@ -86,16 +112,10 @@
           "enable": true,
           "speed": 1.5,
           "direction": "none",
-          "random": false,
-          "straight": false,
-          "out_mode": "out",
-          "attract": {
-            "enable": false
-          }
+          "out_mode": "out"
         }
       },
       "interactivity": {
-        "detect_on": "canvas",
         "events": {
           "onhover": {
             "enable": true,
@@ -104,8 +124,7 @@
           "onclick": {
             "enable": true,
             "mode": "push"
-          },
-          "resize": true
+          }
         },
         "modes": {
           "grab": {
@@ -114,76 +133,46 @@
               "opacity": 0.7
             }
           },
-          "bubble": {
-            "distance": 250,
-            "size": 6,
-            "duration": 2,
-            "opacity": 0.8,
-            "speed": 3
-          },
-          "repulse": {
-            "distance": 400
-          },
           "push": {
             "particles_nb": 4
-          },
-          "remove": {
-            "particles_nb": 2
           }
         }
       },
       "retina_detect": true
     });
   </script>
-  <!-- Modal oculto -->
-  <div id="modal-guia" class="modal">
-    <div class="modal-content">
-      <span class="cerrar" onclick="cerrarModal()">&times;</span>
-      <iframe id="iframe-modal" src="" frameborder="0"></iframe>
-    </div>
-  </div>
 
-  <!-- Tu script actual del modal -->
-<script>
-  function abrirModal(rutaGuia) {
-    var modal = document.getElementById('modal-guia');
-    var iframe = document.getElementById('iframe-modal');
-    iframe.src = rutaGuia;
-    modal.style.display = 'block';
-  }
-
-  function cerrarModal() {
-    var modal = document.getElementById('modal-guia');
-    var iframe = document.getElementById('iframe-modal');
-    modal.style.display = 'none';
-    iframe.src = '';
-  }
-
-  window.onclick = function(event) {
-    var modal = document.getElementById('modal-guia');
-    if (event.target == modal) {
-      cerrarModal();
+  <!-- Script para controlar modal -->
+  <script>
+    function abrirModal(rutaGuia) {
+      var modal = document.getElementById('modal-guia');
+      var iframe = document.getElementById('iframe-modal');
+      iframe.src = rutaGuia;
+      modal.style.display = 'block';
     }
-  }
-</script>
-<!-- Botón -->
-<div class="boton-guias" id="botonGuias" onclick="toggleMenu()">📚</div>
 
-<!-- Menú circular avanzado -->
-<div class="menu-circular" id="menuCircular">
-  <div class="opcion" style="--i:0;" onclick="abrirModal('guias/homologacion.pdf')">Homologación</div>
-  <div class="opcion" style="--i:1;" onclick="abrirModal('guias/validacion.pdf')">Validación</div>
-  <div class="opcion" style="--i:2;" onclick="abrirModal('guias/registro.pdf')">Registro</div>
-  <div class="opcion" style="--i:3;" onclick="abrirModal('guias/admision.pdf')">Admisión</div>
-  <div class="opcion" style="--i:4;" onclick="abrirModal('guias/documentos.pdf')">Documentos</div>
-</div>
+    function cerrarModal() {
+      var modal = document.getElementById('modal-guia');
+      var iframe = document.getElementById('iframe-modal');
+      modal.style.display = 'none';
+      iframe.src = '';
+    }
 
-<!-- Script para abrir/cerrar -->
-<script>
-  function toggleMenu() {
-    const menu = document.getElementById('menuCircular');
-    menu.classList.toggle('activo');
-  }
-</script>
+    window.onclick = function(event) {
+      var modal = document.getElementById('modal-guia');
+      if (event.target == modal) {
+        cerrarModal();
+      }
+    }
+  </script>
+
+  <!-- Script para abrir/cerrar menú circular -->
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menuCircular');
+      menu.classList.toggle('activo');
+    }
+  </script>
+
 </body>
 </html>
