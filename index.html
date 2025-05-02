@@ -167,5 +167,26 @@
       menu.classList.toggle('activo');
     }
   </script>
+  <script>
+  window.botpressWebChat.init({
+    "composerPlaceholder": "Escribe tu mensaje...",
+    "botConversationDescription": "Estamos aquí para ayudarte 📚",
+    "botId": "01HXZT6BP84A4TGB6D1VGW9T51", // usa el botId correcto si es diferente
+    "hostUrl": "https://cdn.botpress.cloud/webchat/v2",
+    "messagingUrl": "https://messaging.botpress.cloud",
+    "clientId": "01HXZT6BP84A4TGB6D1VGW9T51", // usa tu clientId
+    "lazySocket": true,
+    "botName": "Asistente UAM",
+    "avatarUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Eo_circle_purple_checkmark.svg/2048px-Eo_circle_purple_checkmark.svg.png", // opcional
+    "enableTranscriptDownload": false,
+    "showPoweredBy": false,
+    "stylesheet": "", // si deseas personalizar estilos
+    "containerWidth": "400px",
+    "layoutWidth": "100%",
+    "enableReset": true,
+    "theme": "prism", // puedes probar otros temas como 'classic'
+    "themeColor": "#007BFF" // azul UAM
+  });
+</script>
 </body>
 </html>
