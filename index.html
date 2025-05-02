@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portal Admisiones y Registro UAM</title>
 
   <!-- Fuente Roboto -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
 
   <!-- Estilos externos -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
   <!-- Fondo de partículas -->
-  <div id="particles-js"></div>
+  <div id="particles-js" aria-hidden="true"></div>
 
   <!-- Encabezado -->
   <header class="header">
@@ -23,8 +23,8 @@
 
   <!-- Contenido principal -->
   <main class="main-content">
-    <section class="bienvenida">
-      <h2>Bienvenido al Portal</h2>
+    <section class="bienvenida" aria-labelledby="titulo-bienvenida">
+      <h2 id="titulo-bienvenida">Bienvenido al Portal</h2>
       <p>Tu centro de ayuda, tareas y asistencia virtual en Admisiones y Registro.</p>
     </section>
   </main>
@@ -35,26 +35,26 @@
   </footer>
 
   <!-- Modal oculto para mostrar guías -->
-  <div id="modal-guia" class="modal">
+  <div id="modal-guia" class="modal" role="dialog" aria-modal="true" aria-labelledby="titulo-modal">
     <div class="modal-content">
-      <span class="cerrar" onclick="cerrarModal()">&times;</span>
-      <iframe id="iframe-modal" src="" frameborder="0"></iframe>
+      <button class="cerrar" onclick="cerrarModal()" aria-label="Cerrar guía">&times;</button>
+      <iframe id="iframe-modal" title="Guía seleccionada" src="" frameborder="0"></iframe>
     </div>
   </div>
 
   <!-- Botón flotante para abrir menú circular -->
-  <div class="boton-guias" id="botonGuias" onclick="toggleMenu()">
+  <button class="boton-guias" id="botonGuias" onclick="toggleMenu()" aria-label="Abrir menú de guías">
     📚
-  </div>
+  </button>
 
   <!-- Menú circular -->
-  <div class="menu-circular" id="menuCircular">
-    <div class="opcion" style="--i:0;" onclick="abrirModal('guias/homologacion.pdf')">Homologación</div>
-    <div class="opcion" style="--i:1;" onclick="abrirModal('guias/validacion.pdf')">Validación</div>
-    <div class="opcion" style="--i:2;" onclick="abrirModal('guias/registro.pdf')">Registro</div>
-    <div class="opcion" style="--i:3;" onclick="abrirModal('guias/admision.pdf')">Admisión</div>
-    <div class="opcion" style="--i:4;" onclick="abrirModal('guias/documentos.pdf')">Documentos</div>
-  </div>
+  <nav class="menu-circular" id="menuCircular" aria-label="Menú de guías">
+    <button class="opcion" style="--i:0;" onclick="abrirModal('guias/homologacion.pdf')">Homologación</button>
+    <button class="opcion" style="--i:1;" onclick="abrirModal('guias/validacion.pdf')">Validación</button>
+    <button class="opcion" style="--i:2;" onclick="abrirModal('guias/registro.pdf')">Registro</button>
+    <button class="opcion" style="--i:3;" onclick="abrirModal('guias/admision.pdf')">Admisión</button>
+    <button class="opcion" style="--i:4;" onclick="abrirModal('guias/documentos.pdf')">Documentos</button>
+  </nav>
 
   <!-- Librería de partículas -->
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
@@ -62,100 +62,100 @@
   <!-- Configuración de partículas -->
   <script>
     particlesJS('particles-js', {
-      "particles": {
-        "number": {
-          "value": 100,
-          "density": {
-            "enable": true,
-            "value_area": 1000
+      particles: {
+        number: {
+          value: 100,
+          density: {
+            enable: true,
+            value_area: 1000
           }
         },
-        "color": {
-          "value": ["#00c3ff", "#8a2be2", "#39ff14", "#ff00c8"]
+        color: {
+          value: ["#00c3ff", "#8a2be2", "#39ff14", "#ff00c8"]
         },
-        "shape": {
-          "type": "circle"
+        shape: {
+          type: "circle"
         },
-        "opacity": {
-          "value": 0.6,
-          "random": true,
-          "anim": {
-            "enable": true,
-            "speed": 0.5,
-            "opacity_min": 0.2,
-            "sync": false
+        opacity: {
+          value: 0.6,
+          random: true,
+          anim: {
+            enable: true,
+            speed: 0.5,
+            opacity_min: 0.2,
+            sync: false
           }
         },
-        "size": {
-          "value": 3,
-          "random": true,
-          "anim": {
-            "enable": true,
-            "speed": 2,
-            "size_min": 0.5,
-            "sync": false
+        size: {
+          value: 3,
+          random: true,
+          anim: {
+            enable: true,
+            speed: 2,
+            size_min: 0.5,
+            sync: false
           }
         },
-        "line_linked": {
-          "enable": true,
-          "distance": 120,
-          "color": "#ffffff",
-          "opacity": 0.3,
-          "width": 1
+        line_linked: {
+          enable: true,
+          distance: 120,
+          color: "#ffffff",
+          opacity: 0.3,
+          width: 1
         },
-        "move": {
-          "enable": true,
-          "speed": 1.5,
-          "direction": "none",
-          "out_mode": "out"
+        move: {
+          enable: true,
+          speed: 1.5,
+          direction: "none",
+          out_mode: "out"
         }
       },
-      "interactivity": {
-        "events": {
-          "onhover": {
-            "enable": true,
-            "mode": "grab"
+      interactivity: {
+        events: {
+          onhover: {
+            enable: true,
+            mode: "grab"
           },
-          "onclick": {
-            "enable": true,
-            "mode": "push"
+          onclick: {
+            enable: true,
+            mode: "push"
           }
         },
-        "modes": {
-          "grab": {
-            "distance": 200,
-            "line_linked": {
-              "opacity": 0.7
+        modes: {
+          grab: {
+            distance: 200,
+            line_linked: {
+              opacity: 0.7
             }
           },
-          "push": {
-            "particles_nb": 4
+          push: {
+            particles_nb: 4
           }
         }
       },
-      "retina_detect": true
+      retina_detect: true
     });
   </script>
 
   <!-- Script para controlar modal -->
   <script>
     function abrirModal(rutaGuia) {
-      var modal = document.getElementById('modal-guia');
-      var iframe = document.getElementById('iframe-modal');
+      const modal = document.getElementById('modal-guia');
+      const iframe = document.getElementById('iframe-modal');
       iframe.src = rutaGuia;
       modal.style.display = 'block';
     }
 
     function cerrarModal() {
-      var modal = document.getElementById('modal-guia');
-      var iframe = document.getElementById('iframe-modal');
+      const modal = document.getElementById('modal-guia');
+      const iframe = document.getElementById('iframe-modal');
       modal.style.display = 'none';
       iframe.src = '';
     }
 
-    window.onclick = function(event) {
-      var modal = document.getElementById('modal-guia');
-      if (event.target == modal) {
+    window.onclick = function (event) {
+      const modal = document.getElementById('modal-guia');
+      if (event.target === modal) {
         cerrarModal();
       }
     }
