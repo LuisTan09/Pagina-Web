@@ -70,6 +70,7 @@ button {
 button:hover {
   background-color: #009ac1;
 }
+
 #particles-js {
   position: fixed;
   width: 100%;
@@ -79,17 +80,19 @@ button:hover {
   left: 0;
   z-index: -1;
 }
+
 @media (max-width: 600px) {
   .nav a {
     display: block;
     margin: 10px 0;
   }
 }
+
 .visor-guia {
   width: 100%;
   max-width: 1000px;
   margin: 20px auto;
-  display: none; /* Oculto al principio */
+  display: none;
 }
 
 #iframe-guia {
@@ -99,8 +102,9 @@ button:hover {
   border-radius: 10px;
   box-shadow: 0 0 20px #00c3ff50;
 }
+
 .modal {
-  display: none; /* Oculto al inicio */
+  display: none;
   position: fixed;
   z-index: 9999;
   padding-top: 50px;
@@ -146,7 +150,6 @@ button:hover {
   text-shadow: 0 0 10px #00c3ff;
 }
 
-/* Animaciones */
 @keyframes fadeIn {
   from {opacity: 0;}
   to {opacity: 1;}
@@ -156,25 +159,28 @@ button:hover {
   from {transform: scale(0.8);}
   to {transform: scale(1);}
 }
+
 /* Botón flotante */
 .boton-guias {
   position: fixed;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  background: linear-gradient(45deg, #00c3ff, #8a2be2);
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 0 25px 25px 0;
-  font-family: 'Roboto', sans-serif;
-  font-weight: bold;
+  right: 30px;
+  bottom: 30px;
+  background: linear-gradient(135deg, #00c3ff, #8a2be2);
+  color: white;
+  font-size: 30px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 70px;
   cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  transition: transform 0.4s ease;
   z-index: 1000;
-  transition: background 0.3s;
 }
 
 .boton-guias:hover {
-  background: linear-gradient(45deg, #8a2be2, #00c3ff);
+  transform: rotate(20deg) scale(1.1);
 }
 
 /* Menú tipo rueda */
@@ -211,94 +217,6 @@ button:hover {
   color: #000;
   transform: translateX(10px);
 }
-/* Botón flotante */
-.boton-guias {
-  position: fixed;
-  right: 30px;
-  bottom: 30px;
-  background: linear-gradient(135deg, #00c3ff, #8a2be2);
-  color: white;
-  font-size: 30px;
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  text-align: center;
-  line-height: 70px;
-  cursor: pointer;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-  transition: transform 0.3s ease;
-  z-index: 1000;
-}
-
-.boton-guias:hover {
-  transform: scale(1.1) rotate(15deg);
-}
-
-/* Menú radial */
-.menu-radial {
-  position: fixed;
-  right: 65px;
-  bottom: 65px;
-  width: 150px;
-  height: 150px;
-  pointer-events: none;
-  transition: all 0.3s ease;
-  z-index: 999;
-}
-
-.menu-radial.activo {
-  pointer-events: all;
-}
-
-.menu-radial .opcion {
-  position: absolute;
-  width: 100px;
-  height: 40px;
-  background: linear-gradient(135deg, #39ff14, #00c3ff);
-  color: white;
-  border-radius: 20px;
-  text-align: center;
-  line-height: 40px;
-  font-size: 14px;
-  transform: rotate(calc(120deg * var(--i))) translate(80px) rotate(calc(-120deg * var(--i)));
-  transform-origin: bottom right;
-  opacity: 0;
-  transition: 0.5s;
-  cursor: pointer;
-}
-
-/* Animación cuando activo */
-.menu-radial.activo .opcion {
-  opacity: 1;
-}
-
-/* Efecto hover */
-.menu-radial .opcion:hover {
-  background: linear-gradient(135deg, #ff00c8, #8a2be2);
-  transform: scale(1.1) rotate(calc(120deg * var(--i))) translate(80px) rotate(calc(-120deg * var(--i)));
-}
-/* Botón flotante */
-.boton-guias {
-  position: fixed;
-  right: 30px;
-  bottom: 30px;
-  background: linear-gradient(135deg, #00c3ff, #8a2be2);
-  color: white;
-  font-size: 30px;
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  text-align: center;
-  line-height: 70px;
-  cursor: pointer;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-  transition: transform 0.4s ease;
-  z-index: 1000;
-}
-
-.boton-guias:hover {
-  transform: rotate(20deg) scale(1.1);
-}
 
 /* Menú circular */
 .menu-circular {
@@ -334,13 +252,11 @@ button:hover {
   filter: drop-shadow(0 0 5px #00f0ff);
 }
 
-/* Cuando activo: flotan */
 .menu-circular.activo .opcion {
   opacity: 1;
   animation: burbuja 0.6s ease forwards;
 }
 
-/* Animación burbuja */
 @keyframes burbuja {
   0% {
     transform: scale(0.5) rotate(calc(72deg * var(--i))) translate(30px) rotate(calc(-72deg * var(--i)));
@@ -352,9 +268,7 @@ button:hover {
   }
 }
 
-/* Hover efecto especial */
 .menu-circular .opcion:hover {
   background: linear-gradient(135deg, #ff00c8, #8a2be2);
   transform: scale(1.2) rotate(calc(72deg * var(--i))) translate(90px) rotate(calc(-72deg * var(--i)));
 }
-
