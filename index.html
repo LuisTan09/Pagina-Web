@@ -166,29 +166,8 @@
     }
   }
 </script>
-
-<!-- Aquí pegas el nuevo botón y menú tipo rueda -->
-<div class="boton-guias" id="botonGuias" onclick="toggleMenu()">
-  📚 Guías
-</div>
-
-<div class="menu-rueda" id="menuRueda">
-  <div class="opcion" onclick="abrirModal('guias/homologacion.pdf')">Homologación</div>
-  <div class="opcion" onclick="abrirModal('guias/validacion.pdf')">Validación</div>
-  <div class="opcion" onclick="abrirModal('guias/instructivo_registro.pdf')">Instructivo Registro</div>
-</div>
-
-<!-- Script para controlar abrir/cerrar la rueda -->
-<script>
-  function toggleMenu() {
-    var menu = document.getElementById('menuRueda');
-    menu.classList.toggle('active');
-  }
-</script>
-<!-- Botón de Guías flotante -->
-<div class="boton-guias" id="botonGuias" onclick="toggleMenu()">
-  📚
-</div>
+<!-- Botón -->
+<div class="boton-guias" id="botonGuias" onclick="toggleMenu()">📚</div>
 
 <!-- Menú circular avanzado -->
 <div class="menu-circular" id="menuCircular">
@@ -206,6 +185,5 @@
     menu.classList.toggle('activo');
   }
 </script>
-
 </body>
 </html>
