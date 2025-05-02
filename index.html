@@ -35,157 +35,152 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-<script>
-particlesJS('particles-js', {
-  "particles": {
-    "number": {
-      "value": 100,
-      "density": {
-        "enable": true,
-        "value_area": 1000
-      }
-    },
-    "color": {
-      "value": ["#00c3ff", "#8a2be2", "#39ff14", "#ff00c8"]  // colores dinámicos
-    },
-    "shape": {
-      "type": "circle",
-      "stroke": {
-        "width": 0,
-        "color": "#000"
-      }
-    },
-    "opacity": {
-      "value": 0.6,
-      "random": true,
-      "anim": {
-        "enable": true,
-        "speed": 0.5,
-        "opacity_min": 0.2,
-        "sync": false
-      }
-    },
-    "size": {
-      "value": 3,
-      "random": true,
-      "anim": {
-        "enable": true,
-        "speed": 2,
-        "size_min": 0.5,
-        "sync": false
-      }
-    },
-    "line_linked": {
-      "enable": true,
-      "distance": 120,
-      "color": "#ffffff",
-      "opacity": 0.3,
-      "width": 1
-    },
-    "move": {
-      "enable": true,
-      "speed": 1.5,
-      "direction": "none",
-      "random": false,
-      "straight": false,
-      "out_mode": "out",
-      "attract": {
-        "enable": false
-      }
-    }
-  },
-  "interactivity": {
-    "detect_on": "canvas",
-    "events": {
-      "onhover": {
-        "enable": true,
-        "mode": "grab"
-      },
-      "onclick": {
-        "enable": true,
-        "mode": "push"  // efecto destello al hacer clic
-      },
-      "resize": true
-    },
-    "modes": {
-      "grab": {
-        "distance": 200,
+  <script>
+    particlesJS('particles-js', {
+      "particles": {
+        "number": {
+          "value": 100,
+          "density": {
+            "enable": true,
+            "value_area": 1000
+          }
+        },
+        "color": {
+          "value": ["#00c3ff", "#8a2be2", "#39ff14", "#ff00c8"]
+        },
+        "shape": {
+          "type": "circle",
+          "stroke": {
+            "width": 0,
+            "color": "#000"
+          }
+        },
+        "opacity": {
+          "value": 0.6,
+          "random": true,
+          "anim": {
+            "enable": true,
+            "speed": 0.5,
+            "opacity_min": 0.2,
+            "sync": false
+          }
+        },
+        "size": {
+          "value": 3,
+          "random": true,
+          "anim": {
+            "enable": true,
+            "speed": 2,
+            "size_min": 0.5,
+            "sync": false
+          }
+        },
         "line_linked": {
-          "opacity": 0.7
+          "enable": true,
+          "distance": 120,
+          "color": "#ffffff",
+          "opacity": 0.3,
+          "width": 1
+        },
+        "move": {
+          "enable": true,
+          "speed": 1.5,
+          "direction": "none",
+          "random": false,
+          "straight": false,
+          "out_mode": "out",
+          "attract": {
+            "enable": false
+          }
         }
       },
-      "bubble": {
-        "distance": 250,
-        "size": 6,
-        "duration": 2,
-        "opacity": 0.8,
-        "speed": 3
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+          "onhover": {
+            "enable": true,
+            "mode": "grab"
+          },
+          "onclick": {
+            "enable": true,
+            "mode": "push"
+          },
+          "resize": true
+        },
+        "modes": {
+          "grab": {
+            "distance": 200,
+            "line_linked": {
+              "opacity": 0.7
+            }
+          },
+          "bubble": {
+            "distance": 250,
+            "size": 6,
+            "duration": 2,
+            "opacity": 0.8,
+            "speed": 3
+          },
+          "repulse": {
+            "distance": 400
+          },
+          "push": {
+            "particles_nb": 4
+          },
+          "remove": {
+            "particles_nb": 2
+          }
+        }
       },
-      "repulse": {
-        "distance": 400
-      },
-      "push": {
-        "particles_nb": 4   // al hacer clic agrega 4 partículas "brillando"
-      },
-      "remove": {
-        "particles_nb": 2
+      "retina_detect": true
+    });
+  </script>
+
+  <section class="bienvenida">
+    <h2>Bienvenido al Portal</h2>
+    <p>Tu centro de ayuda, tareas y asistencia virtual en Admisiones y Registro.</p>
+  </section>
+
+  <section class="guias">
+    <h2>Guías de ayuda 📚</h2>
+    <ul class="lista-guias">
+      <li><a href="#" onclick="abrirModal('guias/homologacion.pdf')">Guía de Homologación</a></li>
+      <li><a href="#" onclick="abrirModal('guias/validacion.pdf')">Guía de Validación</a></li>
+      <li><a href="#" onclick="abrirModal('guias/instructivo_registro.pdf')">Instructivo de Registro</a></li>
+    </ul>
+  </section>
+
+  <!-- Modal oculto -->
+  <div id="modal-guia" class="modal">
+    <div class="modal-content">
+      <span class="cerrar" onclick="cerrarModal()">&times;</span>
+      <iframe id="iframe-modal" src="" frameborder="0"></iframe>
+    </div>
+  </div>
+
+  <script>
+    function abrirModal(rutaGuia) {
+      var modal = document.getElementById('modal-guia');
+      var iframe = document.getElementById('iframe-modal');
+      iframe.src = rutaGuia;
+      modal.style.display = 'block';
+    }
+
+    function cerrarModal() {
+      var modal = document.getElementById('modal-guia');
+      var iframe = document.getElementById('iframe-modal');
+      modal.style.display = 'none';
+      iframe.src = ''; // Limpia para no dejarlo cargando
+    }
+
+    // Cerrar modal si hace clic afuera del contenido
+    window.onclick = function(event) {
+      var modal = document.getElementById('modal-guia');
+      if (event.target == modal) {
+        cerrarModal();
       }
     }
-  },
-  "retina_detect": true
-});
-</script> 
-  <section class="bienvenida">
-  <h2>Bienvenido al Portal</h2>
-  <p>Tu centro de ayuda, tareas y asistencia virtual en Admisiones y Registro.</p>
-</section>
-
-<section class="guias">
-  <h2>Guías de ayuda 📚</h2>
-  <ul class="lista-guias">
-    <li><a href="#" onclick="abrirModal('guias/homologacion.pdf')">Guía de Homologación</a></li>
-    <li><a href="#" onclick="abrirModal('guias/validacion.pdf')">Guía de Validación</a></li>
-    <li><a href="#" onclick="abrirModal('guias/instructivo_registro.pdf')">Instructivo de Registro</a></li>
-  </ul>
-</section>
-
-<!-- Modal oculto -->
-<div id="modal-guia" class="modal">
-  <div class="modal-content">
-    <span class="cerrar" onclick="cerrarModal()">&times;</span>
-    <iframe id="iframe-modal" src="" frameborder="0"></iframe>
-  </div>
-</div>
-  <script>
-function cargarGuia(ruta) {
-  var visor = document.getElementById('visor-guia');
-  var iframe = document.getElementById('iframe-guia');
-  iframe.src = ruta;
-  visor.style.display = 'block';
-}
-    <script>
-function abrirModal(rutaGuia) {
-  var modal = document.getElementById('modal-guia');
-  var iframe = document.getElementById('iframe-modal');
-  iframe.src = rutaGuia;
-  modal.style.display = 'block';
-}
-
-function cerrarModal() {
-  var modal = document.getElementById('modal-guia');
-  var iframe = document.getElementById('iframe-modal');
-  modal.style.display = 'none';
-  iframe.src = ''; // Limpia para no dejarlo cargando
-}
-
-// Cerrar modal si hace clic afuera del contenido
-window.onclick = function(event) {
-  var modal = document.getElementById('modal-guia');
-  if (event.target == modal) {
-    cerrarModal();
-  }
-}
-</script>
-</script>
+  </script>
 </body>
 </html>
+
